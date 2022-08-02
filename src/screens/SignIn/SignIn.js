@@ -7,8 +7,8 @@ import {
   useWindowDimensions,
 } from "react-native";
 import Logo from "../../../assets/images/logo.png";
-import CustomInput from "../../components/CustomInput";
-import CustomButton from "../../components/CustomButton";
+import SignInput from "../../components/SignInput";
+import SignButton from "../../components/SignButton";
 import WavyBackground from "react-native-wavy-background";
 
 import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
@@ -39,21 +39,21 @@ const SignIn = ({ navigation }) => {
       />
       <Text style={styles.Text}>Schoolmax+</Text>
       <View style={styles.Input}>
-        <CustomInput
+        <SignInput
           placeholder="Username"
           value={Username}
           setValue={(e) => setUsername(e)}
           textEntry={false}
           iconName={"person-outline"}
         />
-        <CustomInput
+        <SignInput
           placeholder="Password"
           value={Password}
           setValue={(e) => setPassword(e)}
           textEntry={true}
           iconName={"lock-open"}
         />
-        <CustomButton Pressed={bPressed} />
+        <SignButton Pressed={bPressed} />
       </View>
       <View
         style={{

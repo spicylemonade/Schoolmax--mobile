@@ -5,7 +5,7 @@ import { useFonts, Poppins_400Regular } from "@expo-google-fonts/poppins";
 import Icon from "@expo/vector-icons/MaterialIcons";
 import AppLoading from "expo-app-loading";
 
-const CustomInput = ({ value, setValue, placeholder, textEntry, iconName }) => {
+const SignButton = ({ value, setValue, placeholder, textEntry, iconName }) => {
   let [fontsLoaded] = useFonts({
     Poppins_400Regular,
   });
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
   },
 });
-export default CustomInput;
+export default SignButton;

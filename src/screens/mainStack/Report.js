@@ -1,6 +1,6 @@
 import React from "react";
 import { enableScreens } from "react-native-screens";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 const Report = () => {
   return (

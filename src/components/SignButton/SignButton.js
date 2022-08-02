@@ -3,7 +3,7 @@ import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
 import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
 import AppLoading from "expo-app-loading";
 
-const CustomButton = ({ Pressed }) => {
+const SignButton = ({ Pressed }) => {
   let [fontsLoaded] = useFonts({
     Poppins_700Bold,
   });
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_700Bold",
   },
 });
-export default CustomButton;
+export default SignButton;
