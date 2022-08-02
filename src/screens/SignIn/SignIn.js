@@ -6,7 +6,7 @@ import {
   StyleSheet,
   useWindowDimensions,
 } from "react-native";
-import Logo from "../../../assets/images/Logo2.png";
+import Logo from "../../../assets/images/logo.png";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import WavyBackground from "react-native-wavy-background";
@@ -14,13 +14,13 @@ import WavyBackground from "react-native-wavy-background";
 import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
 import AppLoading from "expo-app-loading";
 
-const SignIn = () => {
+const SignIn = ({ navigation }) => {
   const [Username, setUsername] = useState("");
   const [Password, setPassword] = useState("");
   const { height } = useWindowDimensions();
 
   function bPressed() {
-    alert("button pressed");
+    navigation.navigate("Main");
   }
   let [fontsLoaded] = useFonts({
     Poppins_700Bold,
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flex: 1,
     paddingTop: 70,
+    backgroundColor: "#F9FBFC",
   },
   logo: {
     width: "40%",
