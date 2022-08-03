@@ -21,7 +21,6 @@ const Main = ({ navigation }) => {
   }
   return (
     <tab.Navigator
-      tabBarOptions={{ showLabel: false }}
       screenOptions={{
         tabBarInactiveTintColor: "#293241",
         tabBarActiveTintColor: "#67bacb",
@@ -36,6 +35,7 @@ const Main = ({ navigation }) => {
             style={{ paddingRight: 10 }}
           />
         ),
+        tabBarShowLabel: false,
       }}
     >
       <tab.Screen
