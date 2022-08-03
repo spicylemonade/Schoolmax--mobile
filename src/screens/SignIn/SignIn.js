@@ -20,16 +20,18 @@ const SignIn = ({ navigation }) => {
   const { height } = useWindowDimensions();
 
   function bPressed() {
-    navigation.navigate("Main");
+    if (Username === "" || Password === "") {
+      alert("Must fill in username and password");
+    } else {
+      navigation.navigate("Main", { screen: "Home" });
+    }
   }
   let [fontsLoaded] = useFonts({
     Poppins_700Bold,
   });
-
   if (!fontsLoaded) {
     return <AppLoading />;
   }
-
   return (
     <View style={styles.root}>
       <Image
@@ -98,6 +100,12 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#293241",
     fontFamily: "Poppins_700Bold",
+  },
+  Initial: {
+    backgroundColor: "#293241",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 export default SignIn;

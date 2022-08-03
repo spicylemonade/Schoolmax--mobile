@@ -7,6 +7,7 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "react-native-screens/native-stack";
 import { createStackNavigator } from "@react-navigation/stack";
+import GetStarted from "./src/screens/GetStarted";
 import SignIn from "./src/screens/SignIn";
 import Main from "./src/screens/mainStack/Main";
 
@@ -17,7 +18,7 @@ const App = () => {
       <StatusBar style="auto" />
       <stack.Navigator screenOptions={{ gestureEnabled: true }}>
         <stack.Screen
-          name="signUp"
+          name="SignUp"
           component={SignIn}
           options={{ headerShown: false }}
         />
