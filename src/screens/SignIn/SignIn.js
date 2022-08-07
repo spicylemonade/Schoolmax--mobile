@@ -20,11 +20,11 @@ const SignIn = ({ navigation }) => {
   const { height } = useWindowDimensions();
 
   function bPressed() {
-    if (Username === "" || Password === "") {
-      alert("Must fill in username and password");
-    } else {
+  //  if (Username === "" || Password === "") {
+   //   alert("Must fill in username and password");
+   // } else {
       navigation.navigate("Main", { screen: "Home" });
-    }
+  //  }
   }
   let [fontsLoaded] = useFonts({
     Poppins_700Bold,

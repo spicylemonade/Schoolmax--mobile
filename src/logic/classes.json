@@ -1,0 +1,22 @@
+[
+  {
+    "class": "English",
+    "teacher": "teacher A",
+    "grade": 98
+  },
+  {
+    "class": "Math",
+    "teacher": "teacher B",
+    "grade": 89
+  },
+  {
+    "class": "Science",
+    "teacher": "teacher c",
+    "grade": 66
+  },
+  {
+    "class": "History",
+    "teacher": "teacher D",
+    "grade": 74
+  }
+]

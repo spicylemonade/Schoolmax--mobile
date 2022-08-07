@@ -23,7 +23,7 @@ const Main = ({ navigation }) => {
     <tab.Navigator
       screenOptions={{
         tabBarInactiveTintColor: "#293241",
-        tabBarActiveTintColor: "#67bacb",
+        tabBarActiveTintColor: "#98c1d9",
         headerTintColor: "#293241",
         headerTitleStyle: { fontFamily: "Poppins_600SemiBold" },
         headerRight: () => (
@@ -63,7 +63,7 @@ const Main = ({ navigation }) => {
           tabBarIcon: ({ color, size }) => (
             <Icon name="assistant" color={color} size={30} />
           ),
-          tabBarBadge: 2,
+          tabBarBadge: 1,
         }}
       />
     </tab.Navigator>
