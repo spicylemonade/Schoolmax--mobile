@@ -11,6 +11,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import SignIn from "./src/screens/SignIn";
 import Main from "./src/screens/mainStack/Main";
 
+///Todo! configure loding fonts
 //enableScreens();
 const stack = createStackNavigator();
 LogBox.ignoreLogs(["expo-app-loading is deprecated"]);

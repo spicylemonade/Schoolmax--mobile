@@ -1,0 +1,35 @@
+[
+    {
+        "Q": "1",
+        "grades": ["spanish A", "English B", "Math A", "History C"]
+    },
+    {
+        "Q": "p1",
+        "grades": ["spanish A", "English B", "Math A", "History C"]
+    },
+    {
+        "Q": "2",
+        "grades": ["spanish A", "English B", "Math A", "History C","Music C"]
+    },
+    {
+        "Q": "p2",
+        "grades": ["spanish A", "English B", "Math A", "History C","Physics D"]
+    },
+    {
+        "Q": "3",
+        "grades": ["spanish A", "English B", "Math A", "History C"]
+    },
+    {
+        "Q": "p3",
+        "grades": ["spanish A", "English B", "Math A", "History C"]
+    },
+    {
+        "Q": "4",
+        "grades": ["spanish A", "English B", "Math A", "History C","Music C"]
+    },
+    {
+        "Q": "p4",
+        "grades": ["spanish A", "English B", "Math A", "History C","Physics D"]
+    }
+    
+]

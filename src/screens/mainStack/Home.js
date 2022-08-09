@@ -20,6 +20,7 @@ const Home = () => {
         <Text style={styles.greet}>Hello Geby</Text>
       </View>
       <ScrollView style={{ width: "100%" }}>
+        {/* maps over elemnts in json */}
         {classes.map((item) => (
           <View key={item.class} style={styles.item_container}>
             <Text style={styles.item}>
