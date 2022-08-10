@@ -1,13 +1,22 @@
 import React from "react";
 import { enableScreens } from "react-native-screens";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import { useFonts, Poppins_600SemiBold } from "@expo-google-fonts/poppins";
+import {
+  useFonts,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+} from "@expo-google-fonts/poppins";
+import HorizontalScrollMenu, {
+  RouteProps,
+} from "@nyashanziramasanga/react-native-horizontal-scroll-menu/src";
+import { useState } from "react";
 //import Icon from "@expo/vector-icons/MaterialIcons";
 
 import AppLoading from "expo-app-loading";
 import reports from "../../logic/report.json";
 const Report = () => {
-  let gpa = 1.02;
+  const [selectedIndex, setSelectedIndex] = useState(1);
+  let gpa = 3.22;
   let percentage = ((gpa - 0.0) / (4.0 - 0.0)) * 100;
   if (percentage > 100) {
     percentage = 100;
@@ -22,12 +31,17 @@ const Report = () => {
   };
   let [fontsLoaded] = useFonts({
     Poppins_600SemiBold,
+    Poppins_700Bold,
   });
 
   if (!fontsLoaded) {
     return <AppLoading />;
   }
   //let x = reports.classes.map(ind=>(<Text>{ind}</Text>))
+  const onPress = (route) => {
+    setSelectedIndex(route.id);
+    console.log("Tab pressed", route);
+  };
 
   return (
     <View style={styles.root}>
@@ -43,21 +57,38 @@ const Report = () => {
         </Text>
         <View style={gpa_style(percentage)}></View>
       </View>
+      <HorizontalScrollMenu
+        items={reports}
+        onPress={onPress}
+        selected={selectedIndex}
+        scrollAreaStyle={{ height: 10 }}
+        activeBackgroundColor="#293241"
+        buttonStyle={{
+          backgroundColor: "#F9FBFC",
+          borderColor: "#293241",
+          margin: 10,
+          height: 40,
+          width: 40,
+          borderRadius: 100,
+        }}
+        textStyle={{
+          fontFamily: "Poppins_600SemiBold",
+        }}
+      />
       <ScrollView style={styles.report_view}>
-        {reports.map((item) => {
-          const x = item.grades.map((kit) => <Text>{kit}</Text>);
-          return (
-            <View style={{ flex: 1 }}>
-              <View style={styles.quarter_view}>
-                <Text style={{ color: "white" }} key={item.Q}>
-                  {item.Q}
-                </Text>
-              </View>
-
-              {x}
-            </View>
-          );
-        })}
+        {reports[selectedIndex].grades.map((kit) => (
+          <View style={styles.quarter_view}>
+            <Text
+              style={{
+                padding: 10,
+                fontFamily: "Poppins_600SemiBold",
+                color: "white",
+              }}
+            >
+              {kit}
+            </Text>
+          </View>
+        ))}
       </ScrollView>
     </View>
   );
@@ -76,18 +107,19 @@ const styles = StyleSheet.create({
   },
   report_view: {
     width: "100%",
-    padding: 20,
+    paddingHorizontal: 20,
   },
-  grade_view: {},
+  grade_view: {
+    backgroundColor: "#F2F3F4",
+    padding: 15,
+    borderRadius: 5,
+  },
   quarter_view: {
     backgroundColor: "#293241",
     borderRadius: 5,
     padding: 10,
     marginVertical: 10,
-    color: "white",
     width: "100%",
-    shadowColor: "black",
-    shadowOffset: { height: 15, width: 15 },
   },
 });
 

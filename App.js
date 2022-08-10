@@ -19,7 +19,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <stack.Navigator screenOptions={{ gestureEnabled: true }}>
+      <stack.Navigator screenOptions={{ gestureEnabled: false }}>
         <stack.Screen
           name="SignUp"
           component={SignIn}

@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 0,
     marginVertical: 5,
-
+    zIndex: 1, // works on ios
+    elevation: 1, // works on android
     alignItems: "center",
   },
   text: {

@@ -5,6 +5,7 @@ import {
   Image,
   StyleSheet,
   useWindowDimensions,
+  KeyboardAvoidingView,
 } from "react-native";
 import Logo from "../../../assets/images/logo.png";
 import SignInput from "../../components/SignInput";
@@ -20,11 +21,11 @@ const SignIn = ({ navigation }) => {
   const { height } = useWindowDimensions();
 
   function bPressed() {
-  //  if (Username === "" || Password === "") {
-   //   alert("Must fill in username and password");
-   // } else {
-      navigation.navigate("Main", { screen: "Home" });
-  //  }
+    //  if (Username === "" || Password === "") {
+    //   alert("Must fill in username and password");
+    // } else {
+    navigation.navigate("Main", { screen: "Home" });
+    //  }
   }
   let [fontsLoaded] = useFonts({
     Poppins_700Bold,
@@ -32,8 +33,16 @@ const SignIn = ({ navigation }) => {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
+  //console.log(height);
   return (
-    <View style={styles.root}>
+    <View
+      style={{
+        alignItems: "center",
+        flex: 1,
+        paddingTop: height * 0.12,
+        backgroundColor: "#F9FBFC",
+      }}
+    >
       <Image
         source={Logo}
         style={[styles.logo, { height: height * 0.3 }]}
@@ -59,14 +68,17 @@ const SignIn = ({ navigation }) => {
       </View>
       <View
         style={{
-          bottom: 0,
+          bottom: "0%",
           left: 0,
           right: 0,
           width: "100%",
+          position: "absolute",
+          zIndex: 0, // works on ios
+          elevation: 0, // works on android
         }}
       >
         <WavyBackground
-          height={300}
+          height={height * 0.59}
           width={1100}
           amplitude={25}
           frequency={1}
