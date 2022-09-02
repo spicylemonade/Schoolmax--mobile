@@ -1,14 +1,28 @@
 import React from "react";
 import { enableScreens } from "react-native-screens";
+import { useEffect } from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { useFonts, Poppins_600SemiBold } from "@expo-google-fonts/poppins";
+
 //import Icon from "@expo/vector-icons/MaterialIcons";
 import classes from "../../logic/classes.json";
 import AppLoading from "expo-app-loading";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 const Home = () => {
   let [fontsLoaded] = useFonts({
     Poppins_600SemiBold,
   });
+  const readData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("username");
+      console.log("home:", value);
+    } catch (e) {
+      alert("Failed to fetch the input from storage");
+    }
+  };
+  useEffect(() => {
+    readData();
+  }, []);
 
   if (!fontsLoaded) {
     return <AppLoading />;

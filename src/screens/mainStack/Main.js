@@ -19,8 +19,13 @@ const Main = ({ navigation }) => {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
+
+  async function trav() {
+    navigation.navigate("SignUp");
+  }
   return (
     <tab.Navigator
+      initialRouteName="Home"
       screenOptions={{
         tabBarInactiveTintColor: "#293241",
         tabBarActiveTintColor: "#98c1d9",
@@ -31,7 +36,7 @@ const Main = ({ navigation }) => {
             name="person-circle"
             size={40}
             color={"#293241"}
-            onPress={() => navigation.navigate("SignUp")}
+            onPress={trav}
             style={{ paddingRight: 10 }}
           />
         ),

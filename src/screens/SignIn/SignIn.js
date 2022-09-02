@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -14,17 +14,36 @@ import WavyBackground from "react-native-wavy-background";
 
 import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
 import AppLoading from "expo-app-loading";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SignIn = ({ navigation }) => {
+  const readData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("username");
+      console.log("sign:", value);
+      if (value !== null) {
+        //await AsyncStorage.clear();
+        navigation.navigate("Main");
+      }
+    } catch (e) {
+      alert("Failed to fetch the input from storage");
+    }
+  };
+  useEffect(() => {
+    readData();
+  }, []);
+
   const [Username, setUsername] = useState("");
   const [Password, setPassword] = useState("");
   const { height } = useWindowDimensions();
 
-  function bPressed() {
+  async function save() {
     //  if (Username === "" || Password === "") {
     //   alert("Must fill in username and password");
     // } else {
-    navigation.navigate("Main", { screen: "Home" });
+    await AsyncStorage.setItem("username", Username);
+    await AsyncStorage.setItem("password", Password);
+    navigation.navigate("Main");
     //  }
   }
   let [fontsLoaded] = useFonts({
@@ -64,7 +83,7 @@ const SignIn = ({ navigation }) => {
           textEntry={true}
           iconName={"lock-open"}
         />
-        <SignButton Pressed={bPressed} />
+        <SignButton Pressed={save} />
       </View>
       <View
         style={{

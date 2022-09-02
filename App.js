@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { enableScreens } from "react-native-screens";
-import { SafeAreaView, StyleSheet, Text, View, LogBox } from "react-native";
+//import { enableScreens } from "react-native-screens";
+import { StyleSheet, LogBox } from "react-native";
 
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
