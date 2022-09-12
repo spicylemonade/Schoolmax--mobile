@@ -37,7 +37,7 @@ const Report = () => {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
-  //let x = reports.classes.map(ind=>(<Text>{ind}</Text>))
+
   const onPress = (route) => {
     setSelectedIndex(route.id);
     console.log("Tab pressed", route);

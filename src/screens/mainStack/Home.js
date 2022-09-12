@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderRadius: 15,
     paddingVertical: 50,
-  },
+  }
 });
 
 function class_box() {
